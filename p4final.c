@@ -1,45 +1,19 @@
-/*
-
-Write a program to find nth number in fibonacci sequence.
-Fibonacci sequence consists of 0,1,1,2,3,5,8,13,21........
-int input();
-int find_fibo(int n);
-void output(int n, int fibo);
-
-*/
-
-#include <stdio.h>
-
-int input()
-{
-  int n;
-  printf("Enter the number\n");
-  scanf("%d",&n);
-  return n;
+#include<stdio.h>
+int input_degree(){
+    int n;
+    printf("Enter the degree of the polynoial\n");
+    scanf("%d",&n);
+    return n;
 }
-int find_fibo(int n)
-{
-  int fibo=0;
-  int a=0;
-  int b=1;
-  for(int i=0;i<n;i++) {
-    fibo = a;
-    a = b;
-    b = fibo + b;
-  }
-  return fibo;
+float input_x(){
+    float x;
+    printf("Enter the value of x\n");
+    scanf("%f",&x); 
+    return x;       
 }
+void input_coefficients(int n,float a[n]){
+    int i;
+    for( i=0;i<=n;i++){
+        printf("Enter the %d coefficients of x\n",i+1);
+        scanf("%f",&a[i]);
 
-
-void output(int n, int fibo)
-{
-  printf("the %dth fibonacci number is %d\n", n, fibo);
-}
-
-int main()
-{
-  int n = input();
-  int fibo = find_fibo(n);
-  output(n, fibo);
-  return 0;
-}

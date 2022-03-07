@@ -1,1 +1,41 @@
-
+Breakpoint 1, main () at p3final.c:22
+22  int main(){
+(gdb) s
+24      input(&n,&r);
+(gdb) n
+Enter the values of 'n' and 'r'
+4
+5
+25      result=ncr(n,r);
+(gdb) s
+ncr (n=4, r=5) at p3final.c:16
+16      result=(fact(n))/(fact(r)*fact(n-r));
+(gdb) n
+17      return result;
+(gdb) n
+18  }
+(gdb) n
+main () at p3final.c:26
+26      output(n,r,result);
+(gdb) s
+output (n=4, r=5, result=0) at p3final.c:20
+20      printf("The nCr value of %d %d is %d",n,r,result);
+(gdb) n
+21  }
+(gdb) n
+main () at p3final.c:27
+27      return 0;
+(gdb) p n
+$1 = 4
+(gdb) p r
+$2 = 5
+(gdb) p result
+$3 = 0
+(gdb) l
+22  int main(){
+23      int n,r,result;
+24      input(&n,&r);
+25      result=ncr(n,r);
+26      output(n,r,result);
+27      return 0;
+28  }(gdb) 
